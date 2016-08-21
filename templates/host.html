@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Host something!</h1>
+      <form action="" method="post">
+        <br>
+        Street Address:
+        <input type="text" placeholder="Address" name="location" value="{{
+        request.form.address }}">
+        <br>
+        <br>
+        City:
+        <input type="text" placeholder="City" name="location" value="{{
+        request.form.city }}">
+        <br>
+        <br>
+        State:
+        <input type="text" placeholder="State" name="location" value="{{
+        request.form.state }}">
+        <br>
+        <br>
+        Date:
+        <input type="date" placeholder="Date" name="date" value="{{
+        request.form.date }}">
+        <br>
+        <br>
+        Duration:
+        <br>
+        <select>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        </select>
+        hour
+        <select>
+        <option value="00">00</option>
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
+        </select>
+        minutes
+        <br>
+        <br>
+        Start Time:
+        <input type="time" placeholder=" Start Time" name="time" value="{{
+        request.form.time }}">
+        <br>
+        <br>
+        <input class="btn btn-default" type="submit" value="Submit">
+      </form>
+
+      <!--<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+      <div style='overflow:hidden;height:440px;width:800px;'>
+      <div id='gmap_canvas' style='height:440px;width:800px;'></div>
+      <div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div>
+      <style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>
+          function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(28.669997,-81.20812030000002),mapTypeId: google.maps.MapTypeId.ROADMAP};
+          map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+          marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(28.669997,-81.20812030000002)});
+          infowindow = new google.maps.InfoWindow({content:'<strong>Try it out!<strong><br>Oviedo, Florida<br>'});
+          google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});
+          infowindow.open(map,marker);}
+          google.maps.event.addDomListener(window, 'load', init_map);
+      </script>-->
+
+      <br>
+      <p>Click <a href="/logout">here</a> to logout.</p>
+      <br>
+
+{% endblock %}
