@@ -7,8 +7,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 #config
-app.config.from_object(os.environ['APP_SETTINGS'])
-
+#app.config.from_object(os.environ['APP_SETTINGS'])
+app.secret_key = '\xa1\xc74jhw\xce\x88]\xf42`\xdbX\x0c\x1d\x8en_\x8b\x03\xf2GJ'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 
 # create sqlalchemy object
@@ -65,4 +65,4 @@ def host_event():
     return render_template('host.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(DEBUG = True)
