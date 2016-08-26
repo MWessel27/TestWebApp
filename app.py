@@ -1,10 +1,14 @@
+import os
+
 from flask import Flask, render_template, redirect, url_for, request, session, flash
 from functools import wraps
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.secret_key = "my precious"
+#config
+app.config.from_object(os.environ['APP_SETTINGS'])
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 
 # create sqlalchemy object
@@ -61,4 +65,4 @@ def host_event():
     return render_template('host.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
